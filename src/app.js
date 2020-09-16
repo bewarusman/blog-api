@@ -14,7 +14,7 @@ app.use(bodyParser.json());
 app.use("/api", require("./routes"));
 
 // handle errors
-app.use(notFound); // in-case a resource-url is not found
+app.use(notFound); // in-case a url path is not found
 app.use(handleError); // in-case an error has occured
 
 module.exports = app;

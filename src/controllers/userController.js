@@ -1,5 +1,7 @@
 const { userService } = require("../services");
 
+// user controller to handle the routes
+
 module.exports = {
   // GET /api/users
   find: async function (req, res, next) {
