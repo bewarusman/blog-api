@@ -1,0 +1,23 @@
+{
+  "name": "blog-server",
+  "version": "1.0.0",
+  "description": "This is a bloging api for demo purposes",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "seed": "node ./src/seed",
+    "dev": "nodemon"
+  },
+  "author": "Bewar.Salah",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mongoose": "^5.10.5",
+    "morgan": "^1.10.0"
+  }
+}
