@@ -7,7 +7,7 @@ module.exports = {
       const posts = await postService.find({ ...req.query });
       res.json(posts);
     } catch (error) {
-      error.message = "failed to create resource";
+      error.msg = "failed to create resource";
       next(error);
     }
   },
@@ -19,7 +19,7 @@ module.exports = {
       if (post == null) res.status(404).json("not found");
       else res.json(post);
     } catch (error) {
-      error.message = "failed to retrieve resource";
+      error.msg = "failed to retrieve resource";
       next(error);
     }
   },

@@ -8,7 +8,6 @@ const { notFound, handleError } = require("./middlewares");
 // third-party middlewares
 app.use(cors());
 app.use(morgan("tiny"));
-app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 // using api routes

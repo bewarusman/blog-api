@@ -1,23 +1,19 @@
 const { Post } = require("../models");
 
 module.exports = {
-  find: async function (requestParams) {
-    const { filter, skip, limit } = buildParams(requestParams);
-    if (skip && limit)
-      return await Post.find(filter)
-        .populate("comments.user")
-        .skip(skip)
-        .limit(limit);
-    return await Post.find(filter).populate("comments.user");
+  find: async function (queryParams) {
+    const { filter, skip, limit } = buildParams(queryParams);
+    return await Post.find(filter)
+      .populate("comments.user")
+      .skip(skip)
+      .limit(limit);
   },
 
   findOne: (id) => Post.findOne({ _id: id }),
 
-  count: async (requestParams) => {
-    const { filter, skip, limit } = buildParams(requestParams);
-    if (skip && limit)
-      return await Post.countDocuments(filter).skip(skip).limit(limit);
-    return await Post.countDocuments(filter);
+  count: async (queryParams) => {
+    const { filter, skip, limit } = buildParams(queryParams);
+    return await Post.countDocuments(filter).skip(skip).limit(limit);
   },
 
   save: async function (postData) {
@@ -46,10 +42,17 @@ module.exports = {
   },
 };
 
-function buildParams(requestParams) {
-  const { _page, _limit, title } = requestParams;
-  const skip = parseInt(_page);
+function buildParams(queryParams) {
+  const { _page, _limit, title } = queryParams;
+  const page = parseInt(_page);
   const limit = parseInt(_limit);
+  if (limit < 0) {
+    limit = 0;
+  }
+  if (page < 0) {
+    page = 0;
+  }
+  const skip = page * limit;
   const filter = {};
   if (title) filter["title"] = title;
   return { filter, skip, limit };
