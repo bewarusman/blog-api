@@ -3,19 +3,19 @@
 # Getting Started
 
 
-# Requirements
+## Requirements
 
 node.js 10.15.3 or higher
 npm 6.9.0 or higher
 
-## Installing
+### Installing
 
 ```bash
-git clone
+git clone https://github.com/bewarusman/blog-api.git
 npm init
 ```
 
-## Start Server
+### Start Server
 
 ```bash
     npm run dev
