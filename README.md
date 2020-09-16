@@ -2,21 +2,20 @@
 
 # Getting Started
 
-This repository is a reference to the tutorial on [medium](https://medium.com/p/a8955435581e).
 
-# Requirements
+## Requirements
 
 node.js 10.15.3 or higher
 npm 6.9.0 or higher
 
-## Installing
+### Installing
 
 ```bash
-git clone
+git clone https://github.com/bewarusman/blog-api.git
 npm init
 ```
 
-## Start Server
+### Start Server
 
 ```bash
     npm run dev
