@@ -2,7 +2,6 @@
 
 # Getting Started
 
-This repository is a reference to the tutorial on [medium](https://medium.com/p/a8955435581e).
 
 # Requirements
 
